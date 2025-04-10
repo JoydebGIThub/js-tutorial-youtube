@@ -31,3 +31,19 @@ const myFunction= function() {
     console.log("Hello everyone");
 }//function object
 console.log(typeof hero);
+
+//++++++++++++++++++++++++++Memories++++++++++++++++++++++++++++++
+//stack (primitive) and heap (non primitive)
+
+let names="Joydeb"
+let anotherName= names
+anotherName= "Rudra"
+console.table([names, anotherName])
+
+let userOne={
+    email: "user@124",
+    age: 22
+}
+let userTwo= userOne
+userTwo.age=26
+console.table([userOne.age, userTwo.age])
