@@ -45,6 +45,7 @@ chai2()
 //implecite return
 // const addTwo = (a,b) => a+b //11
 // const addTwo = (a,b) => (a+b) //11
+//it needs explicite return
 // const addTwo = (a,b) => {username: "Joydeb"}//undefined. without parantisis we can return value
 const addTwo = (a,b) => ({username: "Joydeb"})//{ username: 'Joydeb' }
 
