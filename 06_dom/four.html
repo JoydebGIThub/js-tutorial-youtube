@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    //add language useing function
+    function addLanguage(langName) {
+        const li= document.createElement('li');
+        li.innerHTML = `${langName}`//traverse all the tree element
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('python')
+    addLanguage('Java')
+    addLanguage('CSS')
+    addLanguage('React')
+    //its problem is that when we appendChild it will traverse the whole tree then add in the end
+    //its has to be optimised
+
+    //2nd way
+    function addOptiLanguage(langName) {
+        const li= document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('Spring boot')
+
+</script>
+</html>
