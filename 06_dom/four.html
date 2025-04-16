@@ -32,5 +32,19 @@
     }
     addOptiLanguage('Spring boot')
 
+    //Edit
+    const secondLang=document.querySelector("li:nth-child(2)") //take the reference
+    // secondLang.innerHTML="mojo" //not optimized
+    const newli= document.createElement('li');
+    newli.textContent="Mojo";
+    secondLang.replaceWith(newli)
+
+    //edit
+    const firstLang= document.querySelector("li:first-child")
+    firstLang.outerHTML='<li>Typscript</li>'
+
+    //remove
+    const lastLang= document.querySelector("li:last-child");
+    lastLang.remove();
 </script>
 </html>
