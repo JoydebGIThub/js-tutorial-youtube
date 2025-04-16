@@ -3,7 +3,7 @@
 [click here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
 
 
-# Solution code
+# Solution code: Color changing
 ## project 1
 
 ```javascript
