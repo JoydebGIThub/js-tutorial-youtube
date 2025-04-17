@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Aysnc code example</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+   //setInterval() run the function again and again in a time interval
+   const sayDate= function(str){
+    console.log(str, Date.now());
+   }
+//    setInterval(sayDate, 2000, 'hi') // we can pass the 3rd parameter also
+   //stop the interval
+//    clearInterval();
+   let startInterval='';
+   document.querySelector('#start').addEventListener('click',function(){
+     startInterval=setInterval(sayDate, 2000, 'hi');
+   })
+   document.querySelector('#stop').addEventListener('click',function () {
+    clearInterval(startInterval);    
+   })
+
+</script>
+</html>
