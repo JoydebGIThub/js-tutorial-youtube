@@ -54,5 +54,32 @@
         e.preventDefault(); // the link will not open after the click event happend
     },false)
     
+    //click the li and vanish the photo
+    document.querySelector('#images').addEventListener('click', function(e) {
+        // console.log(e);//print the event
+
+        // console.log(e.target);//from which targeted value the click happened 
+
+        // console.log(e.target.parentNode);// give the parent node means li of that image
+
+        console.log(e.target.tagName);//it will give the tag name which we clicked
+
+
+
+        // let removeit=e.target.parentNode;
+        //1 way to remove
+        // removeit.remove();// if we click the image then it remove the image with its li
+        //but if we click the li then all the li will be removed with ui
+        //2nd way to remove
+        // removeit.parentNode.removeChild(removeit)
+
+    //to prevent all the li we follow the below process
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeit=e.target.parentNode;
+            removeit.remove();
+        }
+        
+    },false)
 </script>
 </html>
