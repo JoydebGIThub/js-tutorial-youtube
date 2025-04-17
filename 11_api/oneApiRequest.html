@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+     const xhr= new XMLHttpRequest(); // create object to send and received request
+     //start by passing method like 'GET' and String like URL in open method
+     const requestURL='https://api.github.com/users/JoydebGIThub'
+     xhr.open('GET', requestURL)
+    //open is not calling automatically, for calling the open we use 
+    console.log(xhr.readyState);// it will show only one state
+    //for continuously monitoring the state we use
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState);// continuouly change the status
+
+        //detected the status
+        if (xhr.readyState === 4) {
+            // console.log(this.responseText); // it will give all the data by fetching from the url after the "4th" state
+            //hold all the response object
+            const data=this.responseText
+            console.log(data.followers);//this don't give any result
+            //because when the response can from the URL it will be in the from of String
+
+            //now for converting String to JSON
+            const jsonData = JSON.parse(this.responseText);//parse help us to convert string to json
+            console.log(jsonData.followers); //0 follower
+        }
+    }
+    xhr.send()
+</script>
+</html>
