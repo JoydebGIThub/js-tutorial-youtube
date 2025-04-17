@@ -22,4 +22,5 @@ Promise has 3 states:
 ```
 In side promise there had Q and Bluebird. By using this we can do the same work which we do using fetch.
 After that Node.js added native support for promises, there is no need to use libraries like Q or BlueBird
+
 ```
