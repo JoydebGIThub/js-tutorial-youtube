@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Aysnc code example</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout();// a method and also can call API
+    //its not a core function of JS we get it through browser
+
+    setTimeout(function () {
+        console.log("Joydeb"); //print only once after timeout
+    }, 2000); //print Joydeb in 2 sec
+
+    //pass the reference in the handler
+    const sayJoydeb = function () {
+        console.log("Biswas"); //print only once after timeout
+    }
+    setTimeout(sayJoydeb, 2000); //pass the reference only
+
+    //change the name in the html h1 tag in 2 sec
+    const changeText = function () {
+        document.querySelector('h1').innerHTML="Best timeout in 2 sec"
+    }
+    const changeMe=setTimeout(changeText,2000) //references
+
+    //stop the timeout before it give the result/execute the function
+    // clearTimeout(changeMe);// pass the reference 
+    //here the text will never change
+
+    //so we put the clearTimeout on a event
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe);
+        console.log("STOPPED");
+    })
+
+
+    
+
+</script>
+</html>
